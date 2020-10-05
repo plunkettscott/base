@@ -1,0 +1,54 @@
+{
+    "name": "responseams/base",
+    "description": "The base package for the Response AMS project.",
+    "keywords": [
+        "responseams",
+        "base"
+    ],
+    "homepage": "https://github.com/responseams/base",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Scott Plunkett",
+            "email": "scott@contaim.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Responseams\\Base\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Responseams\\Base\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Responseams\\Base\\BaseServiceProvider"
+            ],
+            "aliases": {
+                "Base": "Responseams\\Base\\BaseFacade"
+            }
+        }
+    }
+}
